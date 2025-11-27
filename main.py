@@ -1,3 +1,4 @@
+import emojify
 import json
 
 f = open("input.json", "r", encoding="utf-8")
@@ -27,6 +28,8 @@ for key, value in json_data.items():
             checkered_output[0] += " " + char
         else:
             checkered_output[1] += " " + char
+    checkered_output[0] = emojify.encrypt_to_emojis(checkered_output[0])
+    checkered_output[1] = emojify.encrypt_to_emojis(checkered_output[1])
     output_lines.extend(checkered_output)
 
 f = open("out.bee", "w", encoding="utf-8")

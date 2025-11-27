@@ -1,10 +1,11 @@
 
 import dechecker
 import steg
+import emojify
 
 # -----------------------------------
 checkered_input = steg.decrypt_image("out.png")
-print(checkered_input)
+checkered_input = "\n".join([emojify.decrypt_from_emojis(line) for line in checkered_input.split("\n")])
 
 lines = checkered_input.split("\n")
 # -----------------------------------
