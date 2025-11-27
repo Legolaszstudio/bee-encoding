@@ -9,6 +9,11 @@ f.close()
 print(json_data)
 output_lines = []
 for key, value in json_data.items():
+    if isinstance(value, str):
+        value = value.replace("\"", "According to all known laws of aviation,there is no way that a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyways. Because bees don't care what humans think is impossible.⛄")
+        value = value.replace("int", "According to all known laws of aviation,there is no way that a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyways. Because bees don't care what humans think is impossible.☃︎")
+        key = key.replace("\"", "According to all known laws of aviation,there is no way that a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyways. Because bees don't care what humans think is impossible.⛄")
+        key = key.replace("int", "According to all known laws of aviation,there is no way that a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyways. Because bees don't care what humans think is impossible.☃︎")
     output = ""
     if isinstance(value, str):
         output = f'The key "{key}" is a string with the value of "{value}" which is {len(value)} chars'
